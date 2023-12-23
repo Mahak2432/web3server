@@ -197,7 +197,7 @@ app.get('/retrieve-data', async (req, res) => {
 		const web3 = new Web3(address[ran]);
 		const contractAddress = '0xF12b5dd4EAD5F743C6BaA640B0216200e89B60Da'; // Replace with your contract's address
 		const contract = new web3.eth.Contract(contractABI, contractAddress);
-		
+
 		const blockID = req.body.blockID;
 		const patientID = req.body.patientID;
 
@@ -226,10 +226,12 @@ app.get('/retrieve-data', async (req, res) => {
 			// responses.push(response.referenceLink);
 			// blockID = response.previousHash;
 
-			console.log(response);
+		
+			res.send(response);
 		} catch (error) {
 			console.log('Error while retrieving data:');
 			console.log(error);
+			res.send(error);
 		}
 
 		// response = getValueAtAddress('http://127.0.0.1:8545', contractABI, contractAddress);
@@ -238,7 +240,7 @@ app.get('/retrieve-data', async (req, res) => {
 		// e.g., checking if the response indicates no data or unauthorized access
 
 		// Sending back the data
-		res.send(responses);
+	
 	} catch (error) {
 		console.error('Error in retrieving data:', error);
 		res.status(500).send({ error: 'Internal Server Error', details: error.message });
