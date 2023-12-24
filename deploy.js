@@ -5,12 +5,12 @@ const express = require('express');
 // import Web3 from 'web3';
 
 const app = express();
-// const cors = require('cors');
+const cors = require('cors');
 
 require('dotenv').config();
 
 app.use(express.json());
-// app.use(cors);
+app.use(cors());
 
 // Ethereum setup
 const Web3 = require('web3');
@@ -133,7 +133,7 @@ const contractABI = [
 app.post('/submit-mempool', async (req, res) => {
 	try {
 
-		var ran=Math.floor(Math.random() * address.length);
+		var ran=Math.floor(Math.random() * 2);
 
 		const web3 = new Web3(address[ran]);
 		const contractAddress = '0xF12b5dd4EAD5F743C6BaA640B0216200e89B60Da'; // Replace with your contract's address
