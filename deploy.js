@@ -141,9 +141,9 @@ app.post('/submit-mempool', async (req, res) => {
 
 		const mempool = req.body;
 
-		const blockID = mempool.blockID;
+		const blockID = mempool.block.blockID;
 		console.log(blockID, mempool);
-		const PatientDatas = mempool.patientDatas; // or any other way you generate/get this ID
+		const PatientDatas = mempool.block.patientDatas; // or any other way you generate/get this ID
 		const { aadharNumber1, link1, oldBlockID1, aadharNumber2, link2, oldBlockID2 } = mempool;
 		// console.log(blockID, aadharNumber1, link1, oldBlockID1, aadharNumber2, link2, oldBlockID2);
 		const account = '0x68ebe696E27601b6c63628bf28C2f6aA74D491B0'; // Replace with the account that will send the transaction
