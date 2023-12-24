@@ -142,6 +142,7 @@ app.post('/submit-mempool', async (req, res) => {
 		const mempool = req.body;
 
 		const blockID = mempool.blockID;
+		console.log(blockID, mempool);
 		const PatientDatas = mempool.patientDatas; // or any other way you generate/get this ID
 		const { aadharNumber1, link1, oldBlockID1, aadharNumber2, link2, oldBlockID2 } = mempool;
 		// console.log(blockID, aadharNumber1, link1, oldBlockID1, aadharNumber2, link2, oldBlockID2);
