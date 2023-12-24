@@ -5,12 +5,12 @@ const express = require('express');
 // import Web3 from 'web3';
 
 const app = express();
-const cors = require('cors');
+// const cors = require('cors');
 
 require('dotenv').config();
 
 app.use(express.json());
-app.use(cors);
+// app.use(cors);
 
 // Ethereum setup
 const Web3 = require('web3');
