@@ -190,7 +190,7 @@ app.post('/submit-mempool', async (req, res) => {
 });
 
 
-app.get('/retrieve-data', async (req, res) => {
+app.post('/retrieve-data', async (req, res) => {
 	try {
 		// Extracting blockID from the query parameters
 		var ran=Math.floor(Math.random() * address.length);
