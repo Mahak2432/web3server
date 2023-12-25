@@ -200,9 +200,12 @@ app.get('/retrieve-data', async (req, res) => {
 		const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 		console.log(req.body);
+		console.log(req.body.request);
 
 		const blockID = req.body.request.blockID;
 		const patientID = req.body.request.patientID;
+		console.log(blockID, patientID);
+
 
 		if (!blockID) {
 			return res.status(400).send({ error: 'blockID is required' });
